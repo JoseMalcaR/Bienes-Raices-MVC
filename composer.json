@@ -1,0 +1,24 @@
+{
+    "name": "jose/bienes-raices",
+    "description": "Creando un proyecto con POO",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Jose\\BienesRaices\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JoseMalcaR",
+            "email": "jmalca@utem.cl"
+        }
+    ],
+    "require": {
+        "intervention/image": "^3.11"
+    },
+    "autoload" : {
+        "psr-4": {
+            "App\\": "./classes/"
+        }
+    }
+}
