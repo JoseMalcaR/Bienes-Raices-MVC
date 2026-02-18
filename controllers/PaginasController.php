@@ -68,16 +68,16 @@ class PaginasController {
 
             //Configurar SMTP
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->Host = $_ENV['SMTP_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Username = '7f3c7fc0a4b1d5';
-            $mail->Password = '732789944c3817';
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 2525;
+            $mail->Username = $_ENV['SMTP_USERNAME'];
+            $mail->Password = $_ENV['SMTP_PASSWORD'];
+            $mail->SMTPSecure = $_ENV['SMTP_SECURE'];
+            $mail->Port = $_ENV['SMTP_PORT'];
 
             //Configurar el contenido del correo
-            $mail->setFrom('admin@bienesraices.com');
-            $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com');
+            $mail->setFrom($_ENV['SMTP_FROM_EMAIL']);
+            $mail->addAddress($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
             $mail->Subject = 'Tienes un nuevo mensaje';
 
             //Habilitar HTML
